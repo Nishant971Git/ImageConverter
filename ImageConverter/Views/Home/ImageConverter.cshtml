@@ -1,0 +1,97 @@
+﻿@model ImageConverter.Models.UploadFile
+@{
+    ViewData["Title"] = "ImageConverter";
+}
+
+
+<style>
+    .form-group  {
+        padding: 13px;
+    }
+
+    .iframe{
+        height:400px;
+        width:500px;
+    }
+</style>
+
+<div class="col-md-12 mb-4">
+    <div class="card text-left">
+        <div class="card-body">
+            <div class="container-lg pt-4">
+                <form asp-action="ClearImageMaker" asp-controller="Home" enctype="multipart/form-data">
+                    <div class="row p-3 border">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="col-8 pt-4">
+                            <div class="form-group row" >
+                                <div class="col-4">
+                                    <label >Image Name</label>
+                                </div>
+                                <div class="col-8">
+                                    <input asp-for="FileName" class="form-control" />
+                                    <span asp-validation-for="FileName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    Image
+                                </div>
+                                <div class="col-8">
+                                    <input type="file" asp-for="file" name="file" id="uploadBox" multiple class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-8 offset-4">
+                                    @* @if (Model.Product.Id != 0)
+                                    {
+                                    <partial name="_EditAndBackToListButton" model="Model.Product.Id" />
+                                    }
+                                    else
+                                    {*@
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="submit" class="btn btn-primary form-control">Compress Image</button>
+                                            <a href="JavaScript:newPopup(\'https://localhost:44374/\')">Test</a>
+                                        </div>
+
+                                    </div>
+
+                                    @*}*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 mb-4">
+    <div class="card text-left">
+        <div class="card-body">
+            <div class="container-lg pt-4">
+                <iframe src="https://www.google.com/maps" id="imgbox">
+
+               </iframe>
+                </div>
+            <a href="../ConvertedImage/result1.jpg" >Image</a>
+            </div>
+            </div>
+    </div>
+
+ <script>
+   
+     
+     function newPopup(url) {
+        popupWindow = window.open(
+            url, 'popUpWindow', 'height=700,width=900,left=50,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    }
+
+
+
+    </script>
