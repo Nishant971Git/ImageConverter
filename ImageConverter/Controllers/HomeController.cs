@@ -80,13 +80,13 @@ namespace ImageConverter.Controllers
                 
             }
 
-            using (var stream = File.Open(excelpath,FileMode.Open))
-            {
-                using (var reader = ExcelReaderFactory.CreateReader(stream))
-                {
+            //using (var stream = File.Open(excelpath,FileMode.Open))
+            //{
+            //    using (var reader = ExcelReaderFactory.CreateReader(stream))
+            //    {
 
-                }
-            }
+            //    }
+            //}
             string filepath = @"C:\Users\Nishant\Desktop\CSIR-465-images\10000412\sign-10000412.jpg";
 
             byte[] imageArray = System.IO.File.ReadAllBytes(filepath);
